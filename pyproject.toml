@@ -12,7 +12,7 @@ packages = [{ include = "simple_state_tracker" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pydantic = "==2.11.4"
+pydantic = "^2.11.0"
 
 
 [tool.poetry.group.dev.dependencies]
