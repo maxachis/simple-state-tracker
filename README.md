@@ -5,7 +5,7 @@ A minimal, file-backed, type-safe state tracker using Pydantic models — ideal 
 
 ![PyPI](https://img.shields.io/pypi/v/simple-state-tracker)
 ![Python](https://img.shields.io/pypi/pyversions/simple-state-tracker)
-![License](https://img.shields.io/github/license/yourname/simple-state-tracker)
+![License](https://img.shields.io/github/license/maxachis/simple-state-tracker)
 
 
 ## Features
