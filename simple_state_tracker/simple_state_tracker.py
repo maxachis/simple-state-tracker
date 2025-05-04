@@ -75,7 +75,9 @@ class SimpleStateTracker(Generic[K, V]):
         :param key:
         :return:
         """
-        instance = self.data.get(key, self.data_model())
+        instance = self.data.get(key, None)
+        if instance is None:
+            instance = self.data_model()
         yield instance
         self.data[key] = instance
 
