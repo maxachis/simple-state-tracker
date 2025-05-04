@@ -33,17 +33,20 @@ pip install simple-state-tracker
 ```python
 from simple_state_tracker import SimpleStateTracker, KeyModel, DataModel
 
+# First, define a key model
 class ScrapeKey(KeyModel):
     county: str
     municipality: str
     year: int
 
+# Next, define a data model
 class ScrapeState(DataModel):
     scraped: bool = False
     scrape_error: str | None = None
     processed: bool = False
     process_error: str | None = None
 
+# Initialize the tracker
 tracker = SimpleStateTracker(ScrapeKey, ScrapeState, path="tracker.json")
 
 key = ScrapeKey(county="DAUPHIN", municipality="HARRISBURG", year=2022)

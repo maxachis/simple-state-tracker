@@ -1,3 +1,5 @@
+import json
+
 from pydantic import BaseModel
 
 
@@ -9,7 +11,7 @@ class KeyModel(BaseModel):
 
     def __str__(self) -> str:
         """Return a string version of this key for use in JSON serialization."""
-        return ":".join(str(getattr(self, field)) for field in self.model_fields)
+        return json.dumps(self.model_dump(mode="json"))
 
     def __hash__(self):
         return hash(tuple(getattr(self, field) for field in self.model_fields))
@@ -20,8 +22,4 @@ class KeyModel(BaseModel):
 
     @classmethod
     def from_str(cls, s: str) -> "KeyModel":
-        parts = s.split(":")
-        field_types = [f.annotation for f in cls.model_fields.values()]
-        converted = [field_type(part) for field_type, part in zip(field_types, parts)]
-        fields = cls.model_fields.keys()
-        return cls(**dict(zip(fields, converted)))
+        return cls(**json.loads(s))
