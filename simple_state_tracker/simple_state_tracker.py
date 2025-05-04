@@ -54,6 +54,13 @@ class SimpleStateTracker(Generic[K, V]):
         """
         self.data[key] = value
 
+    def clear(self) -> None:
+        """
+        Clear all entries
+        :return:
+        """
+        self.data = {}
+
     @contextmanager
     def edit(self, key: K) -> Generator[V, None, None]:
         """
