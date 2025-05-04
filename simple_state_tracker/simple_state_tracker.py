@@ -45,6 +45,13 @@ class SimpleStateTracker(Generic[K, V]):
         """
         return {k: v.model_copy() for k, v in self.data.items()}
 
+    def all_keys(self) -> list[K]:
+        """
+        Get all keys
+        :return:
+        """
+        return list(self.data.keys())
+
     def set(self, key: K, value: V) -> None:
         """
         Set an entry

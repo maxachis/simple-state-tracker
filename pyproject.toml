@@ -3,7 +3,7 @@ name = "simple-state-tracker"
 
 [tool.poetry]
 name = "simple-state-tracker"
-version = "0.2.0"
+version = "0.3.0"
 description = "A minimal, type-safe, file-backed state tracker using Pydantic models."
 authors = ["Max Chis <maxachis@gmail.com>"]
 license = "LICENSE"

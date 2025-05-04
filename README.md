@@ -69,6 +69,11 @@ tracker.save()
 - Store structured state across CLI or batch job invocations
 - Replace ad-hoc JSON or YAML logs with something type-safe and self-validating
 
+### Non-Use Cases
+
+Do not use this if
+- You are looking for optimization in storage or performance. This is meant to be easy to use and simple to understand, not the fastest or most efficient
+
 ## API Overview
 
 ### `SimpleStateTracker(key_model, data_model, path)`
